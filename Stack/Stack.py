@@ -1,12 +1,12 @@
 class Stack:
     def __init__(self) -> None:
-        self.stack: list[int | float] = []
+        self.stack: list[int | float | str] = []
 
-    def push(self, data: int | float) -> None:
+    def push(self, data: int | float | str) -> None:
         self.stack.append(data)
         print(f"Pushed {data}")
 
-    def pop(self) -> int | float | None:
+    def pop(self) -> int | float | str | None:
         if not self.is_empty():
             removed_data = self.stack.pop()
             print(f"Popped {removed_data}")
@@ -15,7 +15,7 @@ class Stack:
             print("Stack is empty. Cannot pop.")
             return None
 
-    def peek(self) -> int | float | None:
+    def peek(self) -> int | float | str | None:
         if not self.is_empty():
             top_data = self.stack[-1]
             print(f"Top item is {top_data}")
